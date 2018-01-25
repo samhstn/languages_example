@@ -40,6 +40,8 @@ defmodule LanguagesExampleWeb do
       import LanguagesExampleWeb.Router.Helpers
       import LanguagesExampleWeb.ErrorHelpers
       import LanguagesExampleWeb.Gettext
+      import Gettext, only: [get_locale: 0]
+      import LanguagesExampleWeb, only: [known_locales: 0]
     end
   end
 
@@ -63,5 +65,9 @@ defmodule LanguagesExampleWeb do
   """
   defmacro __using__(which) when is_atom(which) do
     apply(__MODULE__, which, [])
+  end
+
+  def known_locales do
+    Gettext.known_locales LanguagesExampleWeb.Gettext
   end
 end

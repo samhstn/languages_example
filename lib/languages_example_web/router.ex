@@ -13,8 +13,12 @@ defmodule LanguagesExampleWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :all do
+    plug LanguagesExampleWeb.SetLocale
+  end
+
   scope "/", LanguagesExampleWeb do
-    pipe_through :browser # Use the default browser stack
+    pipe_through [:browser, :all]
 
     get "/", PageController, :index
     post "/", PageController, :create

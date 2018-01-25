@@ -3,21 +3,13 @@ defmodule LanguagesExampleWeb.PageController do
   import Gettext
 
   def index(conn, _params) do
-    IO.inspect conn
-    case lang = get_session(conn, :lang) do
-      nil -> 
-        render conn, "index.html", lang: lang
-      _ -> 
-        put_locale(LanguagesExampleWeb.Gettext, lang)
-        render conn, "index.html", lang: lang
-    end
+    render conn, "index.html"
   end
 
   def create(conn, %{"lang" => lang}) do
-    put_session(conn, :lang, lang)
+    conn = put_session conn, :lang, lang
+    put_locale lang
 
-    Gettext.put_locale(Gettext, lang)
-
-    render conn, "index.html", lang: lang
+    render conn, "index.html"
   end
 end
