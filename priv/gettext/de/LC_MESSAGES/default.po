@@ -13,4 +13,4 @@ msgstr ""
 #, elixir-format
 #: lib/languages_example_web/templates/page/index.html.eex:2
 msgid "Welcome to %{name}!"
-msgstr "Wilkommen zu %{name}"
+msgstr "Willkommen zu %{name}"
