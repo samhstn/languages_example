@@ -2,8 +2,18 @@
 
 ### Example app with multiple languages configured with Gettext
 
-If available will offer the users language as specified by their browser
-Users can also select a language from the languages which we have configured
+See working example here: https://phoenix-languages-example.herokuapp.com/
+
+The commit history explains how this project has been set up best.
+
+### Functionality
+
+A user can choose a language from the dropdown and all of the text with translations to that language will be translated.
+This will last for the users browser session.
+
+The site will also use the language preferred by the browser.
+This can be tested by changing your language preferences in Chrome in:
+`Settings > Advanced Settings > Languages`
 
 ### Quick Start
 
